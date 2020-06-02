@@ -1,0 +1,13 @@
+.head-title, ul{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid brown;
+    list-style-type: none;
+}
+
+.success{
+    background-color: chartreuse;
+}
+.no_success{
+    background-color: red;
+}
