@@ -1,4 +1,4 @@
-document.querySelector('.laptop').addEventListener('submit', function(event){
+document.querySelector('#laptop').addEventListener('submit', function(event){
     var name = document.querySelector('#title').value;
     var year = document.querySelector('#year').value;
     var proz = document.querySelector('#proz').value;
@@ -34,20 +34,20 @@ function deleteUlList(){
   }
   
   function openDiv(){
-    var buttonOpen = document.getElementsByClassName('info');
+    var buttonOpen = document.getElementsByClassName('show');
     for(let button of buttonOpen){
       button.addEventListener('click', function(){
-          button.parentNode.querySelector('newDiv').classList.add('active');
+          button.nextElementSibling.createElement(newDiv);
           event.preventDefault();
       })
     }
   }
   //закрытие модального окна
   function closeDiv(){
-    var buttonClose = document.getElementsByClassName('modal-close');
+    var buttonClose = document.getElementsByClassName('close');
     for(let button of buttonClose){
       button.addEventListener('click', function(){
-          button.parentElement.classList.remove('active');
+          button.parentElement.remove();
           event.preventDefault();
       })
     }
