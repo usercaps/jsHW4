@@ -11,3 +11,8 @@
 .no_success{
     background-color: red;
 }
+#ultrabook{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
