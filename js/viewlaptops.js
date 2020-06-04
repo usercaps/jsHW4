@@ -6,6 +6,7 @@ ViewLaptop.prototype.addLaptop = function (obj) {
     var block = document.querySelector('#list-laptops');
     var ulList = document.createElement('ul');
     var newDiv = document.createElement('div');
+    newDiv.classList.add('dop-info');
 
     ulList.innerHTML =
         '<li>' + obj.title + '</li>' +
@@ -13,17 +14,15 @@ ViewLaptop.prototype.addLaptop = function (obj) {
         '<li>' + obj.proz + '</li>' +
         '<li>' + obj.core + '</li>' +
         '<li class="delete"><button>Удалить</button></li>' +
-        '<li class="show"><button>Общая информация</button></li>';
+        '<button class="show">Общая информация</button>';
 
     newDiv.innerHTML =
         '<p>' + 'Вес: ' + obj.weight + ' грамм' + '</p>' +
         '<p>' + 'Материал корпуса: ' + obj.material + '</p>' +
-        '<p>' + 'Год выпуска: ' + obj.year + ' год' + '</p>' +
-        '<button class="close">Закрыть</button>';
+        '<p>' + 'Год выпуска: ' + obj.year + ' год' + '</p>' ;
 
     block.appendChild(ulList).append(newDiv);
     deleteUlList();
-    closeDiv();
     openDiv();
 };
 

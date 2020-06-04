@@ -8,6 +8,7 @@ document.querySelector('#laptop').addEventListener('submit', function(event){
     var weight = document.querySelector('#weight').value;
     var laptop = new Laptop(name, year, proz, ram, core, material, weight);
     var viewLaptop = new ViewLaptop();
+    // var viewUltrabook = new ViewUltrabook();
 
     if(title === '' || year === '' || proz === ''|| ram === '' || core === '' || material === ''|| weight === ''){
         viewLaptop.getMessage('empty string', 'no_success');
@@ -16,6 +17,7 @@ document.querySelector('#laptop').addEventListener('submit', function(event){
         viewLaptop.getMessage('Yep, new laptop', 'success');
         viewLaptop.clearInput(); 
     };
+    
 
     event.preventDefault();
 });
@@ -37,19 +39,9 @@ function deleteUlList(){
     var buttonOpen = document.getElementsByClassName('show');
     for(let button of buttonOpen){
       button.addEventListener('click', function(){
-          button.nextElementSibling.createElement(newDiv);
+          button.parentElement.querySelector('.dop-info').classList.toggle('close');
           event.preventDefault();
       })
     }
   }
-  //закрытие модального окна
-  function closeDiv(){
-    var buttonClose = document.getElementsByClassName('close');
-    for(let button of buttonClose){
-      button.addEventListener('click', function(){
-          button.parentElement.remove();
-          event.preventDefault();
-      })
-    }
-    }
   
