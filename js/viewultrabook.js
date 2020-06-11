@@ -1,5 +1,9 @@
-// function ViewUltraBook(){
+function ViewUltraBook(){
 
-// };
+};
 
-// ViewUltraBook.prototype.ViewLaptop;
+ViewUltraBook.prototype.addUltrabook = ViewLaptop.prototype.addLaptop;
+ViewUltraBook.prototype.getMessage = ViewLaptop.prototype.getMessage;
+ViewUltraBook.prototype.clearInput = ViewLaptop.prototype.clearInput;
+
+// ViewUltraBook.prototype = Object.create(ViewLaptop.prototype);

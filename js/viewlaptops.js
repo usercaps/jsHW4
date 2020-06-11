@@ -17,12 +17,12 @@ ViewLaptop.prototype.addLaptop = function (obj) {
         '<button class="show">Общая информация</button>';
 
     newDiv.innerHTML =
-        '<p>' + 'Вес: ' + obj.weight + ' грамм' + '</p>' +
+        '<p>' + 'Вес: ' + obj.weight  + ' гр' + '</p>' +
         '<p>' + 'Материал корпуса: ' + obj.material + '</p>' +
         '<p>' + 'Год выпуска: ' + obj.year + ' год' + '</p>' ;
 
     block.appendChild(ulList).append(newDiv);
-    deleteUlList();
+    // deleteUlList();
     openDiv();
 };
 

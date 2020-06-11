@@ -8,7 +8,6 @@ document.querySelector('#laptop').addEventListener('submit', function(event){
     var weight = document.querySelector('#weight').value;
     var laptop = new Laptop(name, year, proz, ram, core, material, weight);
     var viewLaptop = new ViewLaptop();
-    // var viewUltrabook = new ViewUltrabook();
 
     if(title === '' || year === '' || proz === ''|| ram === '' || core === '' || material === ''|| weight === ''){
         viewLaptop.getMessage('empty string', 'no_success');
@@ -21,9 +20,29 @@ document.querySelector('#laptop').addEventListener('submit', function(event){
 
     event.preventDefault();
 });
+document.querySelector('#ultrabook').addEventListener('submit', function(event){
+    var name = document.querySelector('#U_title').value;
+    var year = document.querySelector('#U_year').value;
+    var proz = document.querySelector('#U_proz').value;
+    var ram = document.querySelector('#U_ram').value;
+    var core = document.querySelector('#U_core').value;
+    var material = document.querySelector('#U_material').value;
+    var weight = document.querySelector('#U_weight').value;
+    var ultrabook = new Ultrabook(name, year, proz, ram, core, material, weight);
+    var viewUltrabook = new ViewUltraBook();
+
+    if(title === '' || year === '' || proz === ''|| ram === '' || core === '' || material === ''|| weight === ''){
+        viewUltrabook.getMessage('empty string', 'no_success');
+    }else{
+        viewUltrabook.addUltrabook(ultrabook);
+        viewUltrabook.getMessage('Yep, new ultrabook', 'success');
+        viewUltrabook.clearInput(); 
+    };
+    event.preventDefault();
+});
 
 
-
+ 
 
 function deleteUlList(){
     var deleteUL = document.getElementsByClassName('delete');
